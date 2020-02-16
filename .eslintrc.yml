@@ -91,6 +91,7 @@ rules:
 globals:
   window: false
   document: false
+  location: false
 
 settings:
   react:
@@ -106,6 +107,8 @@ settings:
         data: "./data"
         pages: "./pages"
         styles: "./styles"
+        lib: "./lib"
+        api: "./api"
 
 overrides:
   - { files: ["cypress/**"], rules: { spaced-comment: "off" } }

@@ -1,15 +1,18 @@
 import React from 'react';
 import Head from 'next/head';
-
-import sample from 'lodash/sample';
+import fetch from 'isomorphic-unfetch';
 
 import Nav from 'components/nav';
-import bestAyahs from 'data/best-ayahs';
 import css from 'styles/index.styl';
 
-const Home = () => {
-  const bestAyah = sample(bestAyahs);
+const getInitialProps = async ({ req }) => {
+  const protocol = req ? `${req.headers['x-forwarded-proto']}:` : window.location.protocol;
+  const host = req ? req.headers.host : window.location.host;
 
+  return fetch(`${protocol}//${host}/api/ayats/best`).then((response) => response.json());
+};
+
+const Home = ({ bestAyat }) => {
   return (
     <div>
       <Head>
@@ -22,7 +25,7 @@ const Home = () => {
       <div className={css.hero}>
         <h1 className={css.title}>Священный Коран</h1>
         <p className={css.desc}>
-          «{bestAyah.text}» ({bestAyah.pos})
+          «{bestAyat.text}» ({bestAyat.sura}:{bestAyat.ayat})
         </p>
 
         <p>DB HOST IS {process.env.DB_HOST}</p>
@@ -45,5 +48,7 @@ const Home = () => {
     </div>
   );
 };
+
+Home.getInitialProps = getInitialProps;
 
 export default Home;

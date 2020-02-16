@@ -9,7 +9,9 @@
           "components": "./components",
           "data": "./data",
           "pages": "./pages",
-          "styles": "./styles"
+          "styles": "./styles",
+          "lib": "./lib",
+          "api": "./api"
         }
       }
     ]
