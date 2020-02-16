@@ -84,11 +84,7 @@ rules:
 
   implicit-arrow-linebreak: "off"
   operator-linebreak: "off"
-  unicorn/catch-error-name: "off"
-  unicorn/prefer-query-selector: "off"
-  unicorn/prefer-node-append: "off"
   unicorn/filename-case: ["error", { "case": "kebabCase" }]
-  unicorn/prevent-abbreviations: 0
 
   import/no-cycle: "off"
 
