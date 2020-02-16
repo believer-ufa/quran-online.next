@@ -1,16 +1,14 @@
-import React from 'react'
-import Head from 'next/head'
+import React from 'react';
+import Head from 'next/head';
 
-import sample from 'lodash/sample'
+import sample from 'lodash/sample';
 
-import Nav from '../components/nav'
-
-import bestAyahs from '../data/best-ayahs'
-
-import css from '../styles/index.styl'
+import Nav from 'components/nav';
+import bestAyahs from 'data/best-ayahs';
+import css from 'styles/index.styl';
 
 const Home = () => {
-  const bestAyah = sample(bestAyahs)
+  const bestAyah = sample(bestAyahs);
 
   return (
     <div>
@@ -27,6 +25,8 @@ const Home = () => {
           «{bestAyah.text}» ({bestAyah.pos})
         </p>
 
+        <p>DB HOST IS {process.env.DB_HOST}</p>
+
         <div className={css.row}>
           <a href="https://nextjs.org/docs" className={css.card}>
             <h3>Documentation &rarr;</h3>
@@ -36,17 +36,14 @@ const Home = () => {
             <h3>Next.js Learn &rarr;</h3>
             <p>Learn about Next.js by following an interactive tutorial!</p>
           </a>
-          <a
-            href="https://github.com/zeit/next.js/tree/master/examples"
-            className={css.card}
-          >
+          <a href="https://github.com/zeit/next.js/tree/master/examples" className={css.card}>
             <h3>Examples &rarr;</h3>
             <p>Find other example boilerplates on the Next.js GitHub.</p>
           </a>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

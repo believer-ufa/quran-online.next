@@ -1,0 +1,31 @@
+{
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "javascript.format.enable": false,
+  "[html]": {
+    "editor.formatOnSave": false
+  },
+  "html.format.enable": true,
+  "html.format.indentHandlebars": true,
+  "html.format.maxPreserveNewLines": 0,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "json.schemas": [
+    {
+      "fileMatch": ["cypress.json"],
+      "url": "https://on.cypress.io/cypress.schema.json"
+    }
+  ],
+  "files.associations": {
+    "*.js": "javascript",
+    "**/cypress/**": "typescript"
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.next": true,
+  },
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "prettier.printWidth": 90,
+  "languageStylus.useSeparator": false
+}

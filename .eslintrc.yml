@@ -1,0 +1,115 @@
+---
+parser: "babel-eslint"
+extends:
+  - airbnb
+  - plugin:import/errors
+  - plugin:import/warnings
+  - plugin:jsx-a11y/recommended
+  - plugin:sonarjs/recommended
+  - plugin:unicorn/recommended
+  - plugin:prettier/recommended
+  - prettier-react
+
+plugins:
+  - react
+  - jsx-a11y
+  - optimize-regex
+  - sonarjs
+  - no-use-extend-native
+  - promise
+  - unicorn
+  - prettier
+
+rules:
+  import/no-unresolved: [2, { commonjs: true, amd: true }]
+  import/named: 2
+  import/namespace: 2
+  import/default: 2
+  import/extensions: "off"
+
+  prettier/prettier: [
+      "error",
+      {
+        # https://prettier.io/docs/en/options.html
+        singleQuote: true,
+        trailingComma: "all",
+        arrowParens: "always",
+        printWidth: 120,
+      },
+    ]
+
+  react/jsx-filename-extension: "off"
+  react/destructuring-assignment: "off"
+  react/jsx-one-expression-per-line: "off"
+  react/jsx-props-no-spreading: "off"
+  react/static-property-placement: "off"
+  react/display-name: "off"
+  react/react-in-jsx-scope: "off"
+
+  jsx-a11y/click-events-have-key-events: "off"
+  jsx-a11y/control-has-associated-label: "off"
+  import/no-extraneous-dependencies: ["error", { "packageDir": "./" }]
+  allowTernary: 0
+  optimize-regex/optimize-regex: "warn"
+  sonarjs/cognitive-complexity: ["error", 30]
+  no-use-extend-native/no-use-extend-native: 2
+  class-methods-use-this: "off"
+  no-restricted-syntax:
+    - "error"
+    - {
+        selector: "ForOfStatement",
+        message: "iterators/generators require regenerator-runtime, which is too heavyweight for this guide to allow them. Separately, loops should be avoided in favor of array iterations.",
+      }
+    - {
+        selector: "LabeledStatement",
+        message: "Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.",
+      }
+    - {
+        selector: "WithStatement",
+        message: "`with` is disallowed in strict mode because it makes code impossible to predict and optimize.",
+      }
+
+  promise/catch-or-return: 0
+  promise/always-return: 0
+  promise/avoid-new: 0
+  promise/no-return-wrap: "error"
+  promise/param-names: "error"
+  promise/no-native: "off"
+  promise/no-nesting: "warn"
+  promise/no-promise-in-callback: "warn"
+  promise/no-callback-in-promise: "warn"
+  promise/no-new-statics: "error"
+  promise/no-return-in-finally: "warn"
+  promise/valid-params: "warn"
+
+  implicit-arrow-linebreak: "off"
+  operator-linebreak: "off"
+  unicorn/catch-error-name: "off"
+  unicorn/prefer-query-selector: "off"
+  unicorn/prefer-node-append: "off"
+  unicorn/filename-case: ["error", { "case": "kebabCase" }]
+  unicorn/prevent-abbreviations: 0
+
+  import/no-cycle: "off"
+
+globals:
+  window: false
+  document: false
+
+settings:
+  react:
+    pragma: "React"
+    version: "16.6"
+
+  import/resolver:
+    babel-module:
+      extensions: [".js"]
+      paths: ["."]
+      alias:
+        components: "./components"
+        data: "./data"
+        pages: "./pages"
+        styles: "./styles"
+
+overrides:
+  - { files: ["cypress/**"], rules: { spaced-comment: "off" } }
