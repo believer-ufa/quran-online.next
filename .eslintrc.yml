@@ -104,6 +104,7 @@ settings:
       paths: ["."]
       alias:
         components: "./components"
+        interfaces: "./interfaces"
         data: "./data"
         pages: "./pages"
         styles: "./styles"

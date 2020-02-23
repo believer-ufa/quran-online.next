@@ -4,6 +4,7 @@
   },
   "include": [
     "components/**/*",
+    "interfaces/**/*",
     "data/**/*",
     "pages/**/*",
     "styles/**/*",

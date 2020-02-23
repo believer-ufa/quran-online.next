@@ -23,7 +23,7 @@
   },
   "search.exclude": {
     "**/node_modules": true,
-    "**/.next": true,
+    "**/.next": true
   },
   "javascript.preferences.importModuleSpecifier": "non-relative",
   "prettier.printWidth": 90,
