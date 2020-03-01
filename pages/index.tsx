@@ -3,7 +3,6 @@ import { NextPage, NextPageContext } from 'next';
 import Link from 'next/link';
 import Head from 'next/head';
 
-import get from 'lodash/get';
 import splitEvery from 'ramda/src/splitEvery';
 
 import paths from 'lib/paths';
@@ -37,7 +36,7 @@ const Home: NextPage<Properties> = ({ bestAyat, allSuras }) => {
   const surasGroups = splitEvery(surasInOneLine, allSuras);
 
   return (
-    <div>
+    <div className={css.contentContainer}>
       <Head>
         <title>Коран Онлайн</title>
         <link rel="icon" href="/favicon.ico" />
@@ -58,7 +57,7 @@ const Home: NextPage<Properties> = ({ bestAyat, allSuras }) => {
                 <div className={css.suraNameContainer} key={sura.id}>
                   <div className={css.suraNum}>{sura.id}</div>
                   <Link {...paths.sura(sura.id)}>
-                    <a className={css.suraName}>{sura.name}</a>
+                    <a className={css.suraName}>{sura.translit} ({sura.name})</a>
                   </Link>
                 </div>
               ))}
