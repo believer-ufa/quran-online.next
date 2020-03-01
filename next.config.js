@@ -5,6 +5,9 @@ require('dotenv').config();
 
 module.exports = withStylus({
   cssModules: true,
+  cssLoaderOptions: {
+    localIdentName: '[name]__[local]___[hash:base64:5]',
+  },
   webpack(config) {
     // Fixes npm packages that depend on `fs` module
     config.node = {

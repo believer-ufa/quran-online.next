@@ -13,11 +13,13 @@
     "next": "9.2.1",
     "react": "16.12.0",
     "react-dom": "16.12.0",
-    "stylus": "^0.54.7"
+    "stylus": "^0.54.7",
+    "ramda": "^0.27.0"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.149",
     "@types/node": "^13.7.4",
+    "@types/ramda": "^0.26.43",
     "@types/react": "^16.9.20",
     "antd": "^3.26.9",
     "babel-eslint": "^10.0.3",
