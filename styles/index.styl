@@ -34,22 +34,35 @@
   justify-content center
   margin-bottom 20px
 
+  @media phone
+    flex-direction column
+
 .surasGroup
   display flex
   flex-direction column
 
-  & + &
-    margin-left 32px
+  @media desktop
+    & + &
+      margin-left 32px
 
 .suraNameContainer
   display flex
   align-items center
   margin-bottom 4px
 
+  @media phone
+    justify-content center
+
 .suraNum
   font-size 11px
   line-height 1
   margin-right 4px
 
+  @media phone
+    font-size 16px
+
 .suraName
   font-size 13px
+
+  @media phone
+    font-size 18px
