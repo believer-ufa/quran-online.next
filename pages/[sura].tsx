@@ -1,10 +1,5 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { NextPage, NextPageContext } from 'next';
-import Link from 'next/link';
-import Head from 'next/head';
-import { useRouter } from 'next/router';
-
-import paths from 'lib/paths';
 
 import css from 'styles/sura.styl';
 
