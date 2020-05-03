@@ -35,6 +35,14 @@ const Home: NextPage<Properties> = ({ bestAyat, allSuras }) => {
   const surasInOneLine = allSuras.length / 4;
   const surasGroups = splitEvery(surasInOneLine, allSuras);
 
+  const bestAyatLink = (
+    <Link {...paths.ayat(bestAyat.sura, bestAyat.ayat)}>
+      <a>
+        {bestAyat.sura}:{bestAyat.ayat}
+      </a>
+    </Link>
+  );
+
   return (
     <div className={css.contentContainer}>
       <Head>
@@ -45,7 +53,7 @@ const Home: NextPage<Properties> = ({ bestAyat, allSuras }) => {
       <div className={css.hero}>
         <h1 className={css.title}>Священный Коран</h1>
         <p className={css.subtitle}>
-          <span dangerouslySetInnerHTML={{ __html: bestAyat.text }} /> ({bestAyat.sura}:{bestAyat.ayat})
+          <span dangerouslySetInnerHTML={{ __html: bestAyat.text }} /> ({bestAyatLink})
         </p>
 
         {/* <p>DB HOST IS {process.env.DB_HOST}</p> */}
@@ -57,7 +65,9 @@ const Home: NextPage<Properties> = ({ bestAyat, allSuras }) => {
                 <div className={css.suraNameContainer} key={sura.id}>
                   <div className={css.suraNum}>{sura.id}</div>
                   <Link {...paths.sura(sura.id)}>
-                    <a className={css.suraName}>{sura.translit} ({sura.name})</a>
+                    <a className={css.suraName}>
+                      {sura.translit} ({sura.name})
+                    </a>
                   </Link>
                 </div>
               ))}

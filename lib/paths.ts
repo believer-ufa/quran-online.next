@@ -2,14 +2,22 @@ import LinkProperties from 'interfaces/link-properties';
 
 export const index = '/';
 
-export const sura = (number: number): LinkProperties => {
+export const sura = (sura: number): LinkProperties => {
   return {
-    href: '/[sura]',
-    as: `/${number}`,
+    href: '/[slug]',
+    as: `/${sura}`,
+  };
+};
+
+export const ayat = (sura: number, ayat: number): LinkProperties => {
+  return {
+    href: '/[slug]',
+    as: `/${sura}:${ayat}`,
   };
 };
 
 export default {
   index,
   sura,
+  ayat,
 };
